@@ -1,0 +1,167 @@
+* {
+    padding: 0;
+    margin: 0;
+    color: #fff;
+    box-sizing: border-box;
+    font-family: "Montserrat", sans-serif;
+}
+
+body {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    /* background-image: linear-gradient(90deg, #a1f7c4 30%, #d0f0c0 70%); */
+    background-image: url(./src/bg-lowres.png);
+    background-size: cover;
+    background-position: center;
+}
+
+.messages {
+    margin-top: 100px;
+    margin-bottom: 100px;
+    width: 1200px;
+    padding: 50px 100px;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    flex-direction: column;background: linear-gradient(
+        to right bottom,
+        rgba(255,255,255,.6),
+        rgba(255,255,255,.3),
+        rgba(255,255,255,.2)
+    );
+    background-color: rgba(255, 255, 255, 0.266);
+    border-radius: 40px;
+    box-shadow: 0 10px 50px #00000019;
+}
+
+.form {
+    display: flex;
+    justify-content: center;
+    position: relative;
+    flex-direction: column;
+    width: 100%;
+    padding-bottom: 90px;
+}
+
+input:focus,
+textarea:focus {
+    outline: none;
+}
+
+input,
+textarea {
+    border: none;
+    color: #000;
+    margin-bottom: 40px;
+    font: 900 60px '';
+    border-radius: 10px;
+    padding: 30px;
+    resize: none;
+    font-family: "Montserrat", sans-serif;
+}
+
+#username {
+    height: 90px;
+}
+
+#message {
+    height: 200px;
+}
+
+.messages h1 {
+    width: 100%;
+    text-align: left;
+    margin-bottom: 70px;
+    font-size: 120px;
+    background-image: linear-gradient(135deg, #68c34c 0%, #a5e9a1 100%);
+    -webkit-background-clip: text;
+    -webkit-text-fill-color: transparent;
+    letter-spacing: 1px;
+}
+
+#submitBtn {
+    position: absolute;
+    right: 0;
+    bottom: 0;
+    background-image: linear-gradient(135deg, #68c34c 0%, #a5e9a1 100%);
+    border: none;
+    font-size: 45px;
+    letter-spacing: 1px;
+    width: 250px;
+    height: 80px;
+    border-radius: 50px;
+    font-weight: bold;
+    transition: transform 0.2s;
+    box-shadow: 0 2px 4px rgba(0, 0, 0, 0.2); /* 添加底部阴影 */
+}
+
+
+#submitBtn:active {
+    transform: translateY(4px); /* 将按钮向下移动2像素，创建按下效果 */
+}
+
+#messageBoard {
+    width: 100%;
+    text-align: left;
+}
+
+@keyframes messageFadeIn {
+    to {
+        opacity: 1;
+    }
+}
+
+.message {
+    width: 100%;
+    margin: 10px;
+    padding: 10px;
+    opacity: 0;
+    animation: messageFadeIn 0.5s ease forwards;
+    background-image: linear-gradient(135deg, #68c34c 0%, #a5e9a1 100%);
+    background-color: #fff;
+    margin: 70px 0;
+    border-radius: 10px;
+    box-shadow: 0 10px 20px #00000026;
+    text-shadow: 0px 0px 20px #ffffff;
+}
+
+.message-info {
+    height: 100px;
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    font-size: 36px;
+    position: relative;
+}
+
+.info {
+    transform: translateY(-30px);
+}
+
+.info img {
+    width: 150px;
+    height: 150px;
+    border-radius: 50%;
+    border: 10px #fff solid;
+}
+
+strong {
+    position: absolute;
+    width: 800px;
+    letter-spacing: 3px;
+    top: 70px;
+    left: 170px;
+}
+
+.message-info span {
+    position: absolute;
+    top: 10px;
+    right: 10px;
+}
+
+.content {
+    font-size: 44px;
+    margin: 30px;
+    width: 95%;
+}
