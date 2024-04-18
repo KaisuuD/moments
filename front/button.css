@@ -1,0 +1,28 @@
+.scroll-to-btn {
+    position: fixed;
+    bottom: 200px; /* 距离底部20像素 */
+    right: 300px; /* 距离右侧20像素 */
+    z-index: 100; /* 确保按钮在其他页面元素之上 */
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    width: 200px; /* 设置一个固定的宽度 */
+    height: 100px; /* 设置一个固定的高度 */
+}
+
+.scroll-to-btn button {
+    background-color: #c2ec27; /* 使用浅黄色作为背景颜色 */
+    border: none;
+    color: #174e06;
+    padding: 10px 20px;
+    margin: 5px;
+    border-radius: 30px;
+    font-size: 18px;
+    font-weight: bold;
+    transition: background-color 0.3s; /* 添加过渡效果 */
+    cursor: url('src/pointer.cur'), pointer;
+}
+
+.scroll-to-btn button:hover {
+    background-color: #e7e977f5; /* 鼠标悬停时，背景颜色变化为另一种浅黄色 */
+}

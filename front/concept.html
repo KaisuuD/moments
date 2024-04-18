@@ -5,29 +5,29 @@
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>concept</title>
-    <!-- Link Montserrat font -->
-    <link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Montserrat:wght@400;700&display=swap">
     <link rel="stylesheet" href="main.css">
+    <link rel="stylesheet" href="button.css">
+    <link rel="stylesheet" href="minor.css">
     <!-- <link rel="stylesheet" href="navi.css"> -->
 </head>
 
 <body>
-    <!-- <ul id="nav">
-        <li class="slide1"></li>
-        <li class="slide2"></li>
-        <li><a href="#">Alpha</a></li>
-        <li><a href="#">Beta</a></li>
-        <li><a href="#">Gamma</a></li>
-        <li><a href="#">Delta</a></li>
-        <li><a href="#">Epsilon</a></li>
-    </ul> -->
+    <div class="container">
+        <header>
+            <nav>
+                <a href="https://github.com/KaisuuD/moments" target="_blank" class="github-link" title="GitHub">
+                    <img src="./src/github-mark-white.png" alt="GitHub">
+                </a>
+            </nav>
+        </header>
+        <div class="messages">
+            <h1>Moments</h1>
+            <div class="form">
+                <input type="text" id="username" placeholder="Name" oninput="limitInput(this)">
+                <textarea placeholder="Tale" id="message"></textarea>
+                <button id="submitBtn">Capture</button>
+            </div>
 
-    <div class="messages">
-        <h1>Moments</h1>
-        <div class="form">
-            <input type="text" id="username" placeholder="Name" oninput="limitInput(this)">
-            <textarea placeholder="Contents" id="message"></textarea>
-            <button id="submitBtn">Capture</button>
         </div>
         <div id="messageBoard">
             <div class="message">
@@ -39,13 +39,33 @@
                     <span>Posted at: 2023/08/29 21:29:39</span>
                 </div>
                 <div class="content">
-                    Lorem ipsum dolor sit amet, consectetur adipiscing elit. Sed euismod.
+                    In the realm of modern technology, capturing life's beautiful moments with a smartphone or camera has become effortlessly commonplace for everyone. These are not just mere snapshots but tangible pieces of reality, precious instants frozen in time with the click of a shutter.<br><br>
+    
+                    Yet, cast your mind back to a distant era, and you'll find humanity relying on a simpler medium: <b>words</b>.<br><br>
+                    
+                    This app prototype I'm crafting embodies the essence of using words alone to encapsulate those unforgettable moments etched in memory, whether beautiful or bittersweet. I aim to strengthen the spiritual connection between individuals, fostering a profound appreciation for the art of expression in its purest form.<br><br>
+                    
+                    In the rapid flux of my era, the world changes with unprecedented speed.<br><br>
+                    
+                    Let us take a moment, slow down, and immortalize these fleeting moments with the stroke of a pen.
                 </div>
         </div>
+        <div class="scroll-to-btn">
+            <button onclick="scrollToPosition('top')">Top</button>
+            <button onclick="scrollToPosition('middle')">Mid</button>
+            <button onclick="scrollToPosition('bottom')">Bot</button>
+        </div>
     </div>
+    <footer>
+        <div>
+            Released under the MIT License.
+            <br>
+            Copyright&copy; 2024-present Kaisuu D
+        </div>
+    </footer>
 </body>
-<!-- <script src="https://cdnjs.cloudflare.com/ajax/libs/jquery/3.4.1/jquery.min.js"></script>
-<script src="navi.js"></script> -->
+
 <script src="main.js"></script>
+<script src="button.js"></script>
 
 </html>

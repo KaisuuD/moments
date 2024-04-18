@@ -1,0 +1,25 @@
+footer {
+    padding: 20px;
+    width: 100%; /* 设置宽度为100% */
+    position: fixed; /* 将 footer 固定在底部 */
+    bottom: 0; /* 将 footer 放置在页面底部 */
+}
+
+footer div {
+    color: #174e06;
+    font-weight: bold;
+}
+
+header {
+    padding: 20px;
+    width: 100%;
+    position: fixed;
+    top: 0;
+    box-sizing: border-box;
+    text-align: right;
+}
+
+.github-link img {
+    height: 40px;  /* 或根据需要调整大小 */
+    cursor: url('.src/pointer.cur'), pointer;
+}

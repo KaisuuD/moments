@@ -1,3 +1,6 @@
+{/* <script src="https://cdnjs.cloudflare.com/ajax/libs/jquery/3.4.1/jquery.min.js"></script>
+<script src="navi.js"></script> */}
+
 $("#nav a").on("click", function () {
     var position = $(this).parent().position();
     var width = $(this).parent().width();

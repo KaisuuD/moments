@@ -1,9 +1,15 @@
+@font-face {
+    font-family: 'SmileySans-Oblique';
+    src: url('src/SmileySans-Oblique.ttf.woff2') format('truetype');
+    /* 添加其他字体属性，如字重、字形等 */
+}
+
 * {
     padding: 0;
     margin: 0;
     color: #fff;
     box-sizing: border-box;
-    font-family: "Montserrat", sans-serif;
+    font-family: 'SmileySans-Oblique', sans-serif;
 }
 
 body {
@@ -14,11 +20,20 @@ body {
     background-image: url(./src/bg-lowres.png);
     background-size: cover;
     background-position: center;
+    background-attachment: fixed;
+    cursor: url('./src/cursor.cur'), auto ;
+}
+
+.container {
+    display: flex;
+    flex-direction: column; /* 垂直排列 */
+    justify-content: center; /* 纵向中心对齐 */
+    align-items: center; /* 横向中心对齐 */
 }
 
 .messages {
-    margin-top: 100px;
-    margin-bottom: 100px;
+    margin-top: 50px;
+    margin-bottom: 0px;
     width: 1200px;
     padding: 50px 100px;
     display: flex;
@@ -31,7 +46,7 @@ body {
         rgba(255,255,255,.2)
     );
     background-color: rgba(255, 255, 255, 0.266);
-    border-radius: 40px;
+    border-radius: 30px;
     box-shadow: 0 10px 50px #00000019;
 }
 
@@ -58,7 +73,7 @@ textarea {
     border-radius: 10px;
     padding: 30px;
     resize: none;
-    font-family: "Montserrat", sans-serif;
+    font-family: 'SmileySans-Oblique', sans-serif;
 }
 
 #username {
@@ -94,15 +109,20 @@ textarea {
     font-weight: bold;
     transition: transform 0.2s;
     box-shadow: 0 2px 4px rgba(0, 0, 0, 0.2); /* 添加底部阴影 */
+    cursor: url('src/pointer.cur'), pointer;
 }
 
 
 #submitBtn:active {
-    transform: translateY(4px); /* 将按钮向下移动2像素，创建按下效果 */
+    transform: translateY(8px);
+}
+
+#submitBtn:hover {
+    background-color: #e7e977f5;
 }
 
 #messageBoard {
-    width: 100%;
+    width: 1200px;
     text-align: left;
 }
 
@@ -121,7 +141,7 @@ textarea {
     background-image: linear-gradient(135deg, #68c34c 0%, #a5e9a1 100%);
     background-color: #fff;
     margin: 70px 0;
-    border-radius: 10px;
+    border-radius: 30px;
     box-shadow: 0 10px 20px #00000026;
     text-shadow: 0px 0px 20px #ffffff;
 }

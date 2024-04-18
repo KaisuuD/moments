@@ -5,7 +5,7 @@ document.getElementById('submitBtn').addEventListener('click', function () {
     var message = document.getElementById('message').value;
     // 如果留言内容为空，弹出提示并返回
     if (message === '') {
-        alert('Please post your moments.');
+        alert('Please write down your Tale.');
         return;
     }
     // 如果用户名为空，将用户名设置为匿名
@@ -19,13 +19,14 @@ document.getElementById('submitBtn').addEventListener('click', function () {
     // 设置留言元素的innerHTML，包含用户名、时间和留言内容
     newMessage.innerHTML = '<div class="message-info"><div class="info"><img src="./src/default.jpg"><strong>'
         + username + '</strong></div><span>Posted at: ' + getCurrentTime() +
-        '</span></div><div class="content">' + message + '</div>';
+        '</span></div><div class="content">' + message.replace(/\n/g, '<br>') + '</div>';  // 将换行符转换为<br>标签
     // 在留言板的第一个子元素之前插入新的留言
     messageBoard.insertBefore(newMessage, messageBoard.firstChild);
     // 清空用户名和留言内容的输入框
     document.getElementById('username').value = '';
     document.getElementById('message').value = '';
 });
+
 // 获取当前时间的函数
 function getCurrentTime() {
     var now = new Date();
@@ -37,6 +38,8 @@ function getCurrentTime() {
     var seconds = ('0' + now.getSeconds()).slice(-2);
     return year + '/' + month + '/' + day + ' ' + hours + ':' + minutes + ':' + seconds;
 }
+
+// 限制输入框的字符长度
 function limitInput(input) {
     // 获取输入框中的值
     var value = input.value;
@@ -46,9 +49,9 @@ function limitInput(input) {
     var totalLength = value.length + chineseLength;
 
     // 判断字符长度是否超过限制
-    if (totalLength > 8) {
-        // 如果总长度超过12个字符，截取前12个字符
-        input.value = value.substring(0, 8 - chineseLength);
+    if (totalLength > 16) {
+        // 如果总长度超过16个字符，截取前16个字符
+        input.value = value.substring(0, 16 - chineseLength);
     }
 }
 
@@ -62,4 +65,10 @@ function countChineseCharacters(str) {
     }
     return count;
 }
+
+
+
+
+
+
 
