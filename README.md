@@ -1,6 +1,6 @@
 # Moments
 
-## Take a moment, slow down, and immortalize these fleeting moments with 'Moments'.
+## Take a moment, slow down.  And immortalize these fleeting moments with 'Moments'.
 
 ### Purpose
 Through the words, strengthen the spiritual connection between individuals and the universe.
