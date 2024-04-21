@@ -7,7 +7,6 @@
     <title>concept</title>
     <link rel="stylesheet" href="main.css">
     <link rel="stylesheet" href="button.css">
-    <link rel="stylesheet" href="minor.css">
     <!-- <link rel="stylesheet" href="navi.css"> -->
 </head>
 
@@ -25,9 +24,9 @@
             <div class="form">
                 <input type="text" id="username" placeholder="Name" oninput="limitInput(this)">
                 <textarea placeholder="Tale" id="message"></textarea>
-                <button id="submitBtn">Capture</button>
+                <button id="submitBtn" onclick="submitPost()">Capture</button>
             </div>
-
+    
         </div>
         <div id="messageBoard">
             <div class="message">
@@ -39,23 +38,30 @@
                     <span>Posted at: 2023/08/29 21:29:39</span>
                 </div>
                 <div class="content">
-                    In the realm of modern technology, capturing life's beautiful moments with a smartphone or camera has become effortlessly commonplace for everyone. These are not just mere snapshots but tangible pieces of reality, precious instants frozen in time with the click of a shutter.<br><br>
+                    In the realm of modern technology, capturing life's beautiful moments with a smartphone or camera has
+                    become effortlessly commonplace for everyone. These are not just mere snapshots but tangible pieces of
+                    reality, precious instants frozen in time with the click of a shutter.<br><br>
     
-                    Yet, cast your mind back to a distant era, and you'll find humanity relying on a simpler medium: <b>words</b>.<br><br>
-                    
-                    This app prototype I'm crafting embodies the essence of using words alone to encapsulate those unforgettable moments etched in memory, whether beautiful or bittersweet. I aim to strengthen the spiritual connection between individuals, fostering a profound appreciation for the art of expression in its purest form.<br><br>
-                    
+                    Yet, cast your mind back to a distant era, and you'll find humanity relying on a simpler medium:
+                    <b>words</b>.<br><br>
+    
+                    This app prototype I'm crafting embodies the essence of using words alone to encapsulate those
+                    unforgettable moments etched in memory, whether beautiful or bittersweet. I aim to strengthen the
+                    spiritual connection between individuals, fostering a profound appreciation for the art of expression in
+                    its purest form.<br><br>
+    
                     In the rapid flux of my era, the world changes with unprecedented speed.<br><br>
-                    
+    
                     Let us take a moment, slow down, and immortalize these fleeting moments with the stroke of a pen.
                 </div>
+            </div>
+            <div id="dynamicContent"></div>
+            <div class="scroll-to-btn">
+                <button onclick="scrollToPosition('top')">Top</button>
+                <button onclick="scrollToPosition('middle')">Mid</button>
+                <button onclick="scrollToPosition('bottom')">Bot</button>
+            </div>
         </div>
-        <div class="scroll-to-btn">
-            <button onclick="scrollToPosition('top')">Top</button>
-            <button onclick="scrollToPosition('middle')">Mid</button>
-            <button onclick="scrollToPosition('bottom')">Bot</button>
-        </div>
-    </div>
     <footer>
         <div>
             Released under the MIT License.
@@ -65,7 +71,9 @@
     </footer>
 </body>
 
-<script src="main.js"></script>
+<!-- <script src="main.js"></script> -->
 <script src="button.js"></script>
+<script src="api.js"></script>
+<script src="minor.js"></script>
 
 </html>
