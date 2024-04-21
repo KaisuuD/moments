@@ -4,6 +4,8 @@
 
 ### And immortalize these fleeting moments with 'Moments'.
 
+---
+
 ### Purpose
 Through the words, strengthen the spiritual connection between individuals and the universe.
 There is no socializing, only the purest emotions.
@@ -15,3 +17,6 @@ There is no socializing, only the purest emotions.
 - User registration
 - User interaction(express emotion only)
 
+### Backend goals
+- User authentication
+- User profile management

@@ -3,7 +3,6 @@ from flask_cors import CORS
 from datetime import datetime
 from pymongo import MongoClient
 import sentry_sdk
-from flask import Flask
 
 sentry_sdk.init(
     dsn="https://d56e1a0c2218df2c32dbaddc9d96ed69@o4507123063128064.ingest.us.sentry.io/4507123072434176",
@@ -40,7 +39,9 @@ def submit_post():
     data = request.get_json()
     username = data['username']
     message = data['message']
-    posted_at = datetime.now()
+    if not username or not message:  # 检查用户名和消息是否都存在
+        return jsonify({'message': 'Username or message is missing.'}), 400
+    posted_at = datetime.now().strftime('%Y/%m/%d %H:%M:%S')  # 修改时间格式为"YYYY/MM/DD HH:MM:SS"
 
     post = {
         'username': username,
