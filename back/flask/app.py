@@ -2,27 +2,39 @@ from flask import Flask, request, jsonify, send_from_directory
 from flask_cors import CORS
 from datetime import datetime
 from pymongo import MongoClient
-import sentry_sdk
+# import sentry_sdk
+from apscheduler.schedulers.background import BackgroundScheduler
+import pytz
 
-sentry_sdk.init(
-    dsn="https://d56e1a0c2218df2c32dbaddc9d96ed69@o4507123063128064.ingest.us.sentry.io/4507123072434176",
-    # Set traces_sample_rate to 1.0 to capture 100%
-    # of transactions for performance monitoring.
-    traces_sample_rate=1.0,
-    # Set profiles_sample_rate to 1.0 to profile 100%
-    # of sampled transactions.
-    # We recommend adjusting this value in production.
-    profiles_sample_rate=1.0,
-)
+# 初始化 Sentry
+# sentry_sdk.init(
+#     dsn="your_dsn_here",
+#     traces_sample_rate=1.0,
+#     profiles_sample_rate=1.0,
+# )
 
-# 应用配置
+# 创建 Flask 应用
 app = Flask(__name__, static_folder='../../front')
 CORS(app)  # 允许所有源
 
-# 数据库连接
+# 连接 MongoDB
 client = MongoClient('mongodb://localhost:27017/')
 db = client['app']
 users_collection = db['users']
+
+# 定义定时执行的任务
+def clear_posts():
+    result = users_collection.delete_many({})
+    print(f"{result.deleted_count} post(s) have been deleted.")
+
+# 创建后台调度器，并设置时区为东京时区
+scheduler = BackgroundScheduler(timezone=pytz.timezone('Asia/Tokyo'))
+
+# 启动调度器，并设定在东京时间早上2点执行清空任务
+scheduler.add_job(clear_posts, 'cron', hour=2)
+
+# 启动调度器
+scheduler.start()
 
 # 静态文件路由
 @app.route('/')

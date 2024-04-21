@@ -16,6 +16,8 @@ There is no socializing, only the purest emotions.
 - UI optimization
 - User registration
 - User interaction(express emotion only)
+- Updated static content fix*
+- Remove alert to improve user experience
 
 ### Backend goals
 - User authentication

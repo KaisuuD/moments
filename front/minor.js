@@ -72,18 +72,16 @@ function fetchAllMessages() {
         // 反转数据，确保最新的评论在前面
         data.reverse();
         // 获取静态内容容器
-        const staticContent = document.getElementById('staticContent');
-        // 获取消息板容器
-        const dynamicContent = document.getElementById('messageBoard');
-        
+        const messageBoard = document.getElementById('messageBoard');  // 获取消息板容器
+
         // 检查是否存在静态内容
-        if (staticContent && dynamicContent) {
-            // 清空动态内容
-            dynamicContent.innerHTML = '';
+        if (messageBoard) {
+            // 清空静态内容
+            messageBoard.innerHTML = '';
             // 更新页面上的留言
             data.forEach(message => {
                 const newMessage = createElementForMessage(message);
-                dynamicContent.appendChild(newMessage);  // 添加新消息到动态容器
+                messageBoard.appendChild(newMessage);  // 添加新消息到消息板容器
             });
         }
     })
