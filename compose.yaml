@@ -1,0 +1,17 @@
+version: "3"
+services:
+  web:
+    build: ./flask
+    ports:
+      - "5000:5000"
+    volumes:
+      - ./flask:/app
+      - ./front:/app/front
+    # environment:
+    #   - BACKEND_API_URL=http://web:5000
+    depends_on:
+      - mongo
+  mongo:
+    image: mongo
+    ports:
+      - "27017:27017"

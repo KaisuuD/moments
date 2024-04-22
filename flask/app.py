@@ -14,11 +14,12 @@ import pytz
 # )
 
 # 创建 Flask 应用
-app = Flask(__name__, static_folder='../../front')
+app = Flask(__name__, static_folder='./front')
 CORS(app)  # 允许所有源
 
 # 连接 MongoDB
-client = MongoClient('mongodb://localhost:27017/')
+# client = MongoClient('mongodb://localhost:27017/')
+client = MongoClient('mongodb://mongo:27017/')
 db = client['app']
 users_collection = db['users']
 
@@ -74,4 +75,4 @@ def get_posts():
 
 # 启动应用
 if __name__ == '__main__':
-    app.run(debug=True, port=5000)
+    app.run(debug=True, host='0.0.0.0', port=5000)

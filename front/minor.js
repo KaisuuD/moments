@@ -36,6 +36,7 @@ function submitPost(username, message) {
 
     // 发送 POST 请求到后端
     fetch('http://127.0.0.1:5000/api/posts', {
+        // fetch(`${process.env.BACKEND_API_URL}/api/posts`, { // 使用环境变量
         method: 'POST',
         headers: {
             'Content-Type': 'application/json'
@@ -65,6 +66,7 @@ function submitPost(username, message) {
 // 加载所有留言函数
 function fetchAllMessages() {
     fetch('http://127.0.0.1:5000/api/posts', {
+        // fetch(`${process.env.BACKEND_API_URL}/api/posts`, { // 使用环境变量    
         method: 'GET'
     })
     .then(response => response.json())
