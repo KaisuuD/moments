@@ -34,12 +34,17 @@ git clone https://github.com/KaisuuD/moments.git
 2. **Navigate to Project Folder:** Enter the project folder using a terminal or command prompt.
 
 3. **Build Docker Image And Start The Container:** Execute the following command to build the Docker image:
+(**Make sure you have Docker and Docker Compose installed.**)
 
 ```sh
 docker-compose up --build
 ```
 
-***Make sure you have Docker and Docker Compose installed.***
+4. **Access the Project:** 
 
-4. **Access the Project:** http://localhost:5000
+```sh
+http://localhost:5000/
+```
 
+### A Novice Programmer's Journey.
+***As a novice programmer, my project undoubtedly has its flaws. At its current stage, it's merely a prototype. However, I have a vision for its future growth. I hope to enhance this project as I continue to learn and develop my skills. With dedication and time, I aim to mould it into something that radiates warmth and comfort.***
