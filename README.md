@@ -38,7 +38,7 @@ git clone https://github.com/KaisuuD/moments.git
 (**Make sure you have Docker and Docker Compose installed.**)
 
 ```sh
-docker-compose up --build
+docker-compose -f compose.yaml up --build
 ```
 
 1. **Access the Project:** 
